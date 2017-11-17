@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="model.js"></script>
+    <script src="solver.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="left">
+        <div class="box" style="font-weight: bold;">
+        Speed:<input id="speed" type="range" oninput="updateSpeed()" step="any" value="10" min="0" max="10" defaultValue="6"></input>
+        </div>
+        <table class="box">
+        <col width="30%">
+        <!--
+        <col width="10%">
+        <col width="15%">
+        <col width="15%">
+        <col width="10%">
+        <col width="20%">
+        -->
+            <tr>
+                <th>Algorithm</th>
+                <th></th>
+                <th>Max. agenda size</th>
+                <th>Elements processed (iterations)</th>
+                <th>Solution cost</th>
+                <th>Execution time (not deterministic)</th>
+            </tr>
+            <tr>
+                <td>BFS</td>
+                <td><button onclick="run(event, 'bfs')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DFS</td>
+                <td><button onclick="run(event, 'dfs')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Best-first Min. dist.</td>
+                <td><button onclick="run(event, 'bestf mindist')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Best-first Euclidean dist.</td>
+                <td><button onclick="run(event, 'bestf euclid')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Best-first Manhattan dist.</td>
+                <td><button onclick="run(event, 'bestf manhattan')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A* Min. dist.</td>
+                <td><button onclick="run(event, 'astar mindist')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A* Euclidean dist.</td>
+                <td><button onclick="run(event, 'astar euclid')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A Manhattan dist.</td>
+                <td><button onclick="run(event, 'astar manhattan')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Dijkstra</td>
+                <td><button onclick="run(event, 'astar none')" class="btn">&#9654;</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="box" style="font-weight: bold;">
+            Test cases
+        </div>
+        <div class="box" style="font-weight: bold;">
+            Open input file: <input type="file" onchange="readInput(event)" id="fileInput" multiple="true" />
+        </div>
+        <div id="list" class="box">
+        </div>
+    </div>
+    <div id="center">
+        <canvas id="mainCanvas">
+        </canvas>
+    </div>
+</body>
+</html>

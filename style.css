@@ -1,0 +1,70 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.opt {
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.opt:hover {
+    background-color: #aaa;
+}
+
+.box {
+    width: 100%;
+    margin-top: 15px;
+}
+
+table {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #aaa;
+    text-align: center;
+}
+
+#menu {
+    width: 100%;
+}
+
+#left {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    height: 100%;
+    width: 30%;
+    background-color: #eee;
+    border-right: solid 1px #aaa;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#list {
+    flex-grow: column;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#center {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: right;
+    height: 100%;
+    width: 70%;
+    overflow: hidden;
+}
+
+#mainCanvas {
+    height: 100%;
+    width: 100%;
+}
