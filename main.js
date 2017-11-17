@@ -6,7 +6,7 @@ const PROCESSED = 2;
 var screenCanvas;
 var canvas;
 var grids = [];
-var ppc = 20;
+var ppc = 1;
 var interactive = 1;
 var selectedIndex = 0;
 var currentRunId;
@@ -241,13 +241,10 @@ function drawPath(g) {
 }
 
 function drawSolutionSoFar(g) {
-    ppc = Math.floor(2000 / Math.min(g.rows, g.cols));
-    ppc = Math.max(10, ppc);
     canvas.width = g.cols * ppc;
     canvas.height = g.rows * ppc;
 
     let ctx = canvas.getContext('2d');
-    //ctx.imageSmoothingEnabled = false;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = '#464646';
@@ -309,6 +306,8 @@ function main() {
     screenCanvas.width = screenCanvas.clientWidth;
     screenCanvas.height = screenCanvas.clientHeight;
 
+    screenCanvas.getContext('2d').imageSmoothingEnabled = false;
+    canvas.getContext('2d').imageSmoothingEnabled = false;
     /* Add grids to the list of options */
     generateMazeBisec();
     generateEmptyGrid();
