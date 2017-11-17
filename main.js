@@ -306,7 +306,13 @@ function main() {
     screenCanvas.width = screenCanvas.clientWidth;
     screenCanvas.height = screenCanvas.clientHeight;
 
+    screenCanvas.getContext('2d').mozImageSmoothingEnabled = false;
+    screenCanvas.getContext('2d').webkitImageSmoothingEnabled = false;
+    screenCanvas.getContext('2d').msImageSmoothingEnabled = false;
     screenCanvas.getContext('2d').imageSmoothingEnabled = false;
+    canvas.getContext('2d').mozImageSmoothingEnabled = false;
+    canvas.getContext('2d').webkitImageSmoothingEnabled = false;
+    canvas.getContext('2d').msImageSmoothingEnabled = false;
     canvas.getContext('2d').imageSmoothingEnabled = false;
     /* Add grids to the list of options */
     generateMazeBisec();
