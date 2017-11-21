@@ -276,6 +276,10 @@ function drawOnScreen() {
         screenCanvas.height = screenCanvas.clientHeight;
     }
     let ctx2 = screenCanvas.getContext('2d');
+    ctx2.mozImageSmoothingEnabled = false;
+    ctx2.webkitImageSmoothingEnabled = false;
+    ctx2.msImageSmoothingEnabled = false;
+    ctx2.imageSmoothingEnabled = false;
     ctx2.clearRect(0, 0, screenCanvas.width, screenCanvas.height);
     sy = screenCanvas.height / canvas.height;
     sx = screenCanvas.width / canvas.width
